@@ -1,0 +1,202 @@
+# ============================================================================
+# CodeLearn — Root .gitignore
+# Lives at the workspace root (E:\aicodelearner\.gitignore)
+# Git is initialized at the workspace root so this covers all apps/subdirs.
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# 1. Node / pnpm / monorepo
+# ----------------------------------------------------------------------------
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+
+# pnpm
+.pnpm/
+
+# turbo
+.turbo/
+
+# ----------------------------------------------------------------------------
+# 2. Build outputs (all apps)
+# ----------------------------------------------------------------------------
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+*.tsbuildinfo
+
+# Vite cache
+.vite/
+*.local
+
+# ----------------------------------------------------------------------------
+# 3. Caches — system and toolchain
+# ----------------------------------------------------------------------------
+.cache/
+.eslintcache
+.parcel-cache/
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.stylelintcache
+
+# ----------------------------------------------------------------------------
+# 4. Test / coverage
+# ----------------------------------------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+.jest/
+playwright-report/
+test-results/
+.vitest-cache/
+
+# ----------------------------------------------------------------------------
+# 5. Environment / secrets (NEVER commit)
+# ----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.crt
+secrets/
+.claude/
+.mcp.json
+
+# ----------------------------------------------------------------------------
+# 6. Logs
+# ----------------------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ----------------------------------------------------------------------------
+# 7. OS / editor cruft
+# ----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+
+# JetBrains / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Emacs
+*.swp
+*.swo
+*~
+.\#*
+
+# ----------------------------------------------------------------------------
+# 8. AI / CodeLearn specific
+# ----------------------------------------------------------------------------
+# RAG cache, snapshots, analyses (always project-local, always ignored)
+.codelearn/
+.codelearn.yaml
+
+# Generated analysis files (Markdown outputs from analyses)
+.analysis/
+
+# TTS cache (synthesized audio chunks)
+.tts-cache/
+
+# Embedding vectors (raw .npy blobs)
+.embeddings/
+
+# Documentation sources (ingested by RAG, not part of code)
+.docs-cache/
+
+# Project-local AI config overrides
+.ai-code-learner.yaml
+.aillocalignore
+
+# ----------------------------------------------------------------------------
+# 9. Python (used by faster-whisper sidecar in Phase 3)
+# ----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing / coverage
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+profile_default/
+
+# ----------------------------------------------------------------------------
+# 10. Misc / one-offs
+# ----------------------------------------------------------------------------
+*.bak
+*.tmp
+*.orig
+*.rej
+*.pid
+*.seed
+*.pid.lock
+
+# Yarn / npm alternative lockfiles (we use pnpm)
+yarn.lock
+package-lock.json
+
+# ----------------------------------------------------------------------------
+# 11. Allow-listed exceptions (force-include even if pattern matches)
+# ----------------------------------------------------------------------------
+# None yet — add here with `!path` if a normally-ignored path must be tracked.
+
+design
+plans
+plan.txt

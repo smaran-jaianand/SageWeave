@@ -1,0 +1,14 @@
+{
+  "name": "terminal-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "WebSocket shell server for AI Code Learner — streams a real local shell to the browser terminal.",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs",
+    "dev":   "node --watch index.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
